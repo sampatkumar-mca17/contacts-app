@@ -12,7 +12,7 @@ class DashboardComponent {
         this.contacts = this.getAllContacts();
         this.updateTableWithContacts()
         this.addEventListenerToAddContact()
-        
+
     }
     /**API Calls start */
 
@@ -301,7 +301,7 @@ class DashboardComponent {
 
     // views or hides table
     toggleTableView(show){
-            document.getElementById("table-container").style.display = show?"block":'none';
+            document.getElementById("table-container").style.display = show?"table":'none';
             document.getElementById('no-data').style.display = show?'none':'flex'
     }
 
