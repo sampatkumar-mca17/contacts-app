@@ -77,7 +77,7 @@ class DashboardComponent {
         this.hideDialog()
     }
     // Delete contact
-    async delete(){
+    async delete(id){
         this.toggleLoader(true);
         const status = await this.contactsService.deleteContact(id);
         if(status === 'deleted'){
@@ -341,7 +341,7 @@ class DashboardComponent {
         if(!confirmation){
             return;
         }
-        this.delete()
+        this.delete(id)
     }
 
     /**Event listeners callbacks end */
