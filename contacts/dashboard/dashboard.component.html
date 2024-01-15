@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dashboard.component.css">
+
+    <title>Contacts Diary</title>
+</head>
+<body>
+    <div id="loader">
+        <img src="../assets/Gear-0.2s-200px.gif" alt="...loading">
+    </div>
+    <div id="table-container">
+        <h1><span class="blue">&lt;</span>Contacts<span class="blue">&gt;</span> <span class="yellow">Diary</pan></h1>
+            <h2>Created by <a href="https://github.com/sampatkumar-mca17" target="_blank">Sampatkumar</a></h2>
+            <div class="actions">
+                <button class="btn btn-primary" id="add-contact" (click)="addContact()">Add Contact</button>
+            </div>
+            <table class="container">
+                <thead id="tableHead">
+                </thead>
+                <tbody id="tableBody">
+                </tbody>
+            </table>
+            <dialog id="add-contact-dialog">
+                <input type="text" placeholder="Name" id="contact-name"> <br>
+                <span class="error" id="contact-name-error"></span> <br>
+                <input type="text" placeholder="Email" id="contact-email"> <br>
+                <span class="error" id="contact-email-error"></span> <br>
+                <input type="text" placeholder="number" id="contact-number"> <br>
+                <span class="error" id="contact-number-error"></span> <br>
+                <input type="text" placeholder="Place" id="contact-place"> <br>
+                <span class="error" id="contact-place-error"></span> <br>
+            </dialog>
+    </div>
+    <script src="dashboard.component.js" type="module">
+    </script>
+</body>
+</html>
