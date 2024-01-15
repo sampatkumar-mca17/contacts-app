@@ -345,7 +345,7 @@ class DashboardComponent {
         if user confirms calls the api for deleting the contact
     */
     deleteContact(id){
-        const confirmation = confirm('Are you sure you want to delete this contact?')
+        const confirmation = confirm(`Are you sure you want to delete contact with id ${id} ?`)
         if(!confirmation){
             return;
         }
