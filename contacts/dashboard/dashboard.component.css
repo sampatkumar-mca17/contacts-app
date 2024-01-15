@@ -38,6 +38,12 @@ h2 a {
     top: 36vh;
     left: 40%;
 }
+#no-data{
+  display: flex;
+  justify-content: center;
+  height: calc(100vh - 200px);
+  align-items: center;
+}
 .actions{
   position:relative;
   left:10%;

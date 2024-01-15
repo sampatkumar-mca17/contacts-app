@@ -12,7 +12,7 @@ class DashboardComponent {
         this.contacts = this.getAllContacts();
         this.updateTableWithContacts()
         this.addEventListenerToAddContact()
-       
+        
     }
     /**API Calls start */
 
@@ -23,11 +23,13 @@ class DashboardComponent {
      this.toggleLoader(false);
      if(typeof contacts === 'string' && contacts === 'failed'){
         alert('Contacts fetch failed, please try again in sometime')
+        this.toggleTableView(false);
         return [];
      }
+     this.toggleTableView(contacts.length > 0);
      return contacts;
     }
-
+    
     // Add new contact
     async save(){
         const {name, email, number, place} = this.getAddContactDialogElements()
@@ -98,7 +100,7 @@ class DashboardComponent {
     // toggles loader whenever, this is used to show loading indicator when api calls are happening
     toggleLoader(show){
             document.getElementById('loader').style.display = show?'block':'none'
-            document.getElementById('table-container').style.display = show?'none':'block'
+            document.getElementById('data-container').style.display = show?'none':'block'
     }
     // updates the table with contacts fetched from API
     async updateTableWithContacts(){
@@ -295,6 +297,12 @@ class DashboardComponent {
     // click listener for add contact button
     addEventListenerToAddContact(){
         this.addContactListener =  document.getElementById('add-contact').addEventListener('click',this.addContact.bind(this,SAVE_CONTANCT_CONSTANT));
+    }
+
+    // views or hides table
+    toggleTableView(show){
+            document.getElementById("table-container").style.display = show?"block":'none';
+            document.getElementById('no-data').style.display = show?'none':'flex'
     }
 
     /**Event listeners end */
