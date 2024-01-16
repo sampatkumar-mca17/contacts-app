@@ -1,4 +1,4 @@
-const API_PREFIX = 'https://phonebook-dev.onrender.com'
+const API_PREFIX = 'https://phonebook-dev-1.onrender.com'
 const EMAIL_REGEX = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 const CONTACT_ERRORS = {
     name: '',

@@ -11,7 +11,7 @@ class ContactsService{
 
     async getAllContacts(){
         try{
-            const contactsResp = await fetch(`${this.apiPrefix}/contact`)
+            const contactsResp = await fetch(`${this.apiPrefix}/contacts`)
             return await contactsResp.json();
         }
         catch(e){
@@ -21,7 +21,7 @@ class ContactsService{
 
     async addContact(data){
         try{
-            const createResp = await fetch(`${this.apiPrefix}/contact`,{
+            const createResp = await fetch(`${this.apiPrefix}/contacts`,{
                 method:'POST',
                 headers: {
                     "Content-Type": "application/json",
@@ -37,7 +37,7 @@ class ContactsService{
 
     async updateContact(id,data){
         try{
-            const updateResp = await fetch(`${this.apiPrefix}/contact/${id}`,{
+            const updateResp = await fetch(`${this.apiPrefix}/contacts/${id}`,{
                 method:'PATCH',
                 headers: {
                     "Content-Type": "application/json",
@@ -53,7 +53,7 @@ class ContactsService{
 
     async deleteContact(id){
         try{
-            const deleteResp = await fetch(`${this.apiPrefix}/contact/${id}`,{
+            const deleteResp = await fetch(`${this.apiPrefix}/contacts/${id}`,{
                 method:'DELETE',
             })
             return 'deleted'
